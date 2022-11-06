@@ -38,9 +38,9 @@ class SkillController extends Controller
                  'image' => $image
               ]);
 
-              return Redirect::route('skills.index')->with('message', 'Skill Add Successfully ! ');
+              return Redirect::back()->with('message', 'Skill Add Successfully ! ');
           }else{
-            return Redirect::route('skills.index');
+            return Redirect::back();
           }
     }
 
@@ -66,7 +66,7 @@ class SkillController extends Controller
               'image' => $image
          ]);
 
-         return redirect()->route('skills.index')->with('message', 'Skill Update Successfully !');
+         return Redirect::route('skills.index')->with('message', 'Skill Update Successfully !');
     }
 
     public function destroy(Skill $skill)

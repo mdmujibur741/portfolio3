@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { Link } from '@inertiajs/inertia-vue3';
 import HeaderVue from '@/Components/Frontend/Header.vue';
+import FooterVue from '@/Components/Frontend/Footer.vue';
 
 
 
@@ -16,6 +17,7 @@ import HeaderVue from '@/Components/Frontend/Header.vue';
             <main>
                <slot/>
             </main>
+           <FooterVue/>
          </div>
     </div>
 </template>

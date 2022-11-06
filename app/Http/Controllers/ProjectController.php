@@ -41,7 +41,7 @@ class ProjectController extends Controller
                     'project_url' => $request->project_url,
                ]);
 
-               return Redirect::route('projects.index');
+               return Redirect::back()->with('message', 'Project Data Submit Successfully !');
           } else {
                return Redirect::back();
           }
