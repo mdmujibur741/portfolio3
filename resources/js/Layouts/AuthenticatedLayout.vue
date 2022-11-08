@@ -1,25 +1,20 @@
 <script setup>
 import { ref } from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 
-const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-    <div class="mainPage">
-        <div class="">
+    <div class="mainPage ">
+        <div >
             <div v-if="$page.props.flash.message" class="alert alert-light shadow" role="alert">
                 <h4 class="text-center text-success">   {{ $page.props.flash.message }}</h4>
               </div>
 
-              <nav class="navbar navbar-expand-lg mt-3">
+              <nav class="navbar navbar-expand-lg" style="padding: 1% 8%;">
                 <div class="container-fluid">
-                   <img :src="'/storage/logo/logo.jpg'" alt="" srcset="" class="rounded-circle ms-5" style="width: 60px; height:60px !important;">
+                   <img :src="'/storage/logo/logo.jpg'" alt="" srcset="" class="rounded-circle" style="width: 60px; height:60px !important;">
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -89,11 +84,12 @@ const showingNavigationDropdown = ref(false);
 <style scoped>
  
 .mainPage{
-             background: rgb(215, 222, 241);
+            
+             background: #DEE7EE;
              min-height: 100vh;
 }
 .navbar{
-               background: rgb(222, 231, 238);
+               background: rgb(171, 205, 231);
 }
 .nav-link{
                 background: rgb(228, 207, 239);

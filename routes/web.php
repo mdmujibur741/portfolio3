@@ -1,21 +1,17 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 
 
-Route::get('/', function () {
-    return Inertia::render('Frontend/index', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-})->name('web.home');
+
+Route::get('/',[FrontendController::class,'index'])->name('web.home');
+Route::post('/contact',[ContactController::class,'index'])->name('contact');
 
 Route::middleware(['auth', 'verified'])->group( function(){
          Route::get('/dashboard', function(){
